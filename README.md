@@ -1,2 +1,2 @@
 # lazy-config
-lazy config file api written in c
+lazy config file-api written in c
