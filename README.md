@@ -1,6 +1,10 @@
 # lazy-config
 lazy config file-api written in c
 
+# Philosophy
+
+lazy-config is lazy both in usage and in reading, meaning it will be easy to use and will read on-the-go only what is necessary.
+
 # Plan
 - [ ] implement generic code that can parse most config files
 - [ ] implement rudamentary ini support

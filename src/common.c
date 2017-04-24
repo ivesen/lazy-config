@@ -18,7 +18,7 @@ char* read_to_memory(char file_name[]){
   char *buffer;
   long numbytes;
 
-  infile = fopen(file_name, "r");
+  infile = fopen(file_name, "rb");
 
   if(infile == NULL){
     return NULL;
@@ -49,11 +49,11 @@ char* read_to_memory(char file_name[]){
 }
 
 /*
-* strip_comments()
-* removes everything from TOKEN until newline in a memory chunk
-*
-* returns NULL on failure
-*/
+ * strip_comments()
+ * removes everything from TOKEN until newline in a memory chunk
+ *
+ * returns NULL on failure
+ */
 char* strip_comments(char *file_to_strip, char TOKEN){
 
   return NULL;
