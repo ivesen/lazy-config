@@ -62,20 +62,36 @@ char* strip_comments(char *file_to_strip, char TOKEN){
   long current_char = 0;
   long byte_count = 0;
   char *buffer;
+  long buffer_char = 0;
 
-  while(file_to_strip[byte_count] != 0){
+  while(file_to_strip[byte_count] != EOF || file_to_strip[byte_count] != 0){
     byte_count++;
-  } 
+  }
   // input or memory error
   if (!byte_count) {
     return NULL;
   }
 
-  buffer = (char*)calloc(byte_count, sizeof(char));
+  buffer = (char*)calloc(byte_count+1, sizeof(char));
 
-  while(file_to_strip[current_char] != TOKEN){
+  // loop until we've gotten to the end of the memory block
+  while(file_to_strip[current_char] != EOF || file_to_strip[current_char] != 0){
 
+    // skip Comments
+    if(file_to_strip[current_char] == TOKEN){
+      while(file_to_strip[current_char] != '\n'){
+        current_char++;
+      }
+      // skip the newline
+      current_char++;
+    }
+
+    // copy content to new buffer
+    buffer[buffer_char] = file_to_strip[current_char];
+    buffer_char++; current_char++;
   }
 
+  // cleanup
+  free(file_to_strip);
   return NULL;
 }
