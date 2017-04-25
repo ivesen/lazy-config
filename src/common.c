@@ -34,9 +34,12 @@ char* read_to_memory(char file_name[]){
 
   /* grab sufficient memory for the
   buffer to hold the text */
-  buffer = (char*)calloc(numbytes, sizeof(char));
+  buffer = (char*)calloc(numbytes+1, sizeof(char));
 
-  /* memory error */
+  // guarantee nulltermination.
+  buffer[numbytes+1] = 0;
+
+  // memory error
   if(buffer == NULL){
     return NULL;
   }
@@ -52,9 +55,27 @@ char* read_to_memory(char file_name[]){
  * strip_comments()
  * removes everything from TOKEN until newline in a memory chunk
  *
+ * returns a new buffer on success
  * returns NULL on failure
  */
 char* strip_comments(char *file_to_strip, char TOKEN){
+  long current_char = 0;
+  long byte_count = 0;
+  char *buffer;
+
+  while(file_to_strip[byte_count] != 0){
+    byte_count++;
+  } 
+  // input or memory error
+  if (!byte_count) {
+    return NULL;
+  }
+
+  buffer = (char*)calloc(byte_count, sizeof(char));
+
+  while(file_to_strip[current_char] != TOKEN){
+
+  }
 
   return NULL;
 }
