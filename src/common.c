@@ -75,7 +75,7 @@ char* strip_comments(char *file_to_strip, char TOKEN){
   buffer = (char*)calloc(byte_count+1, sizeof(char));
 
   // loop until we've gotten to the end of the memory block
-  while(file_to_strip[current_char] != EOF || file_to_strip[current_char] != 0){
+  while(file_to_strip[current_char] != EOF && file_to_strip[current_char] != 0){
 
     // skip Comments
     if(file_to_strip[current_char] == TOKEN){
@@ -93,5 +93,25 @@ char* strip_comments(char *file_to_strip, char TOKEN){
 
   // cleanup
   free(file_to_strip);
-  return NULL;
+  return buffer;
+}
+
+/*
+ * lineify()
+ * takes a textblock in and splits it into lines
+ *
+ * returns NULL on failure
+ */
+char** lineify(char *block_to_charify){
+  char **return_value;
+  long current_char = 0;
+  long newlines_encountered = 0;
+
+  while(block_to_charify[current_char] != EOF && block_to_charify[current_char] != 0){
+
+
+  }
+
+
+  return return_value;
 }
