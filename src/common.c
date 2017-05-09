@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "common.h"
 
 /*
  * read_to_memory()

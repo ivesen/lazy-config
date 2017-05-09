@@ -4,6 +4,7 @@
  */
 
 #include "lazy_config.h"
+#include "common.h"
 #include <stdio.h>
 
 /*

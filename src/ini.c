@@ -2,6 +2,10 @@
  * this file should contain functions targetting .ini parsing.
  */
 
+#include "common.h"
+// we most likely won't need this include
+#include "lazy_config.h"
+
 //TODO: read_line
 /*
  * Read a single line.
